@@ -4,7 +4,7 @@ import Editor from '../components/markdown/Editor';
 import styles from './Document.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getUpdateMarkdown, getMarkdown } from '../selectors/documentSelectors';
+import { getMarkdown } from '../selectors/documentSelectors';
 
 const Document = ({ updateMarkdown, markdown }) => {
 
@@ -24,13 +24,13 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   updateMarkdown(state) {
-    dispatch(getUpdateMarkdown(state));
+    dispatch(getMarkdown(state));
   }
 });
 
 Document.propTypes = {
   markdown: PropTypes.string.isRequired,
-  updateMarkdown: PropTypes.func.isRequired
+  updateMarkdown: PropTypes.func
 };
   
 export default connect(
