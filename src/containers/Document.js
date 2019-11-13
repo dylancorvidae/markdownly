@@ -5,16 +5,17 @@ import styles from './Document.css';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getMarkdown } from '../selectors/documentSelectors';
+import { updateMarkdown } from '../actions/documentActions';
 
 const Document = ({ updateMarkdown, markdown }) => {
 
   return (
-        <>
-          <div className={styles.Document}>
-            <Editor markdown={markdown} updateMarkdown={updateMarkdown} />
-            <Preview markdown={markdown} />
-          </div>
-        </>
+    <>
+      <div className={styles.Document}>
+        <Editor markdown={markdown} updateMarkdown={updateMarkdown} />
+        <Preview markdown={markdown} />
+      </div>
+    </>
   );
 };
 
@@ -23,8 +24,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  updateMarkdown(state) {
-    dispatch(getMarkdown(state));
+  updateMarkdown({ target }) {
+    dispatch(updateMarkdown(target.value));
   }
 });
 
@@ -32,21 +33,8 @@ Document.propTypes = {
   markdown: PropTypes.string.isRequired,
   updateMarkdown: PropTypes.func
 };
-  
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Document);
-  
-
-
-
-// export default class Document extends PureComponent {
-//   state = {
-//     markdown: '# Hi there'
-//   };
-
-//   updateMarkdown = ({ target }) => {
-//     this.setState({ markdown: target.value });
-//   };
-
