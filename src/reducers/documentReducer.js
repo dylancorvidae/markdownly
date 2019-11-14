@@ -15,7 +15,7 @@ export default function reducer(state = initialState, action) {
       return { ...state, markdowns: { ...state.markdowns, [action.payload]: `# ${action.payload}` } };
     case DELETE_TAB:
       delete state.markdowns[action.payload];
-      return { ...state, markdowns: { ...state.markdowns } };
+      return { ...state };
     default:
       return state;
   }
