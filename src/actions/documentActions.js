@@ -10,3 +10,10 @@ export const addTab = title => ({
   payload: title
 });
 
+export const DELETE_TAB = 'DELETE_TAB';
+export const deleteTab = title => ({
+  type: DELETE_TAB,
+  payload: title
+});
+
+

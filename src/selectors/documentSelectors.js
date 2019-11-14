@@ -11,3 +11,7 @@ export const getMarkdown = state => {
 export const getTitles = state => {
   return Object.keys(state.documentReducer.markdowns);
 };
+
+export const deleteTab = state => {
+  return state.documentReducer.markdowns;
+};
