@@ -7,20 +7,20 @@ import PropTypes from 'prop-types';
 import { getMarkdown } from '../selectors/documentSelectors';
 import { updateMarkdown } from '../actions/documentActions';
 
-const Document = ({ updateMarkdown, markdowns }) => {
+const Document = ({ updateMarkdown, markdown }) => {
 
   return (
     <>
       <div className={styles.Document}>
-        <Editor markdowns={markdowns} updateMarkdown={updateMarkdown} />
-        <Preview markdowns={markdowns} />
+        <Editor markdown={markdown} updateMarkdown={updateMarkdown} />
+        <Preview markdown={markdown} />
       </div>
     </>
   );
 };
 
 const mapStateToProps = state => ({
-  markdowns: getMarkdown(state)
+  markdown: getMarkdown(state)
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -30,7 +30,7 @@ const mapDispatchToProps = dispatch => ({
 });
 
 Document.propTypes = {
-  markdowns: PropTypes.array.isRequired,
+  markdown: PropTypes.string.isRequired,
   updateMarkdown: PropTypes.func
 };
 
