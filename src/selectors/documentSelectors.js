@@ -1,4 +1,3 @@
-// export const getUpdateMarkdown = state => state.documentReducer.updated;
 export const getActiveTab = state => {
   return state.documentReducer.active;
 };
@@ -14,4 +13,8 @@ export const getTitles = state => {
 
 export const deleteTab = state => {
   return state.documentReducer.markdowns;
+};
+
+export const getSearchTerm = state => {
+  return state.documentReducer.getSearchTerm;
 };

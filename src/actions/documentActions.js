@@ -16,4 +16,15 @@ export const deleteTab = title => ({
   payload: title
 });
 
+export const ADD_SEARCH = 'ADD_SEARCH';
+export const addSearch = searchByTitle => ({
+  type: ADD_SEARCH,
+  payload: searchByTitle
+});
+
+export const GET_MATCH_TITLE = 'GET_MATCH_TITLE';
+export const getMatchTitle = searchTerm => ({
+  type: GET_MATCH_TITLE,
+  payload: searchTerm
+});
 
