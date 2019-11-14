@@ -2,34 +2,38 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TabDeck from '../components/tab/TabDeck';
 import { connect } from 'react-redux';
-import { getTab } from '../selectors/tabSelector';
-// import { addTab } from '../actions/tabActions';
+import { getTitles } from '../selectors/documentSelectors';
+import { addTab } from '../actions/documentActions';
 
 
-const Tabs = () => {
+
+const Tabs = ({ handleClick, titles }) => {
   return (
     <>
-      <TabDeck tabs={[{ id: 0 }]} />
-      <button>ADD</button>
+      <TabDeck titles={titles} />
+      <button onClick={() => handleClick(titles.length)}>ADD</button>
     </>
   );
 };
 
-// const mapStateToProps = state => ({
-//   tabs: getTab(state)
-// });
+const mapStateToProps = state => ({
+  titles: getTitles(state)
+});
 
-// const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = dispatch => ({
+  handleClick(tabNumber) {
+    dispatch(addTab(tabNumber));
+  }
+});
 
-// });
+Tabs.propTypes = {
+  titles: PropTypes.array.isRequired,
+  handleClick: PropTypes.func.isRequired
+};
 
-// Tabs.propTypes = {
-//   tabs: PropTypes.array.isRequired
-// };
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Tabs);
 
-// export default connect(
-//   mapStateToProps,
-//   // mapDispatchToProps
-// )(Tabs);
 
-export default Tabs;

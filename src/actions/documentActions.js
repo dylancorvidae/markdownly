@@ -4,8 +4,9 @@ export const updateMarkdown = updatedInput => ({
   payload: updatedInput
 });
 
-// export const NEW_MARKDOWN = 'NEW_MARKDOWN';
-// export const newMarkdown = state => ({
-//   type: NEW_MARKDOWN,
-//   payload: state
-// });
+export const ADD_TAB = 'ADD_TAB';
+export const addTab = title => ({
+  type: ADD_TAB,
+  payload: title
+});
+

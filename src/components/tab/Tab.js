@@ -1,18 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// eslint-disable-next-line react/prop-types
-const Tab = ({ id }) => {
+const Tab = ({ title }) => {
   return (
     <li>
-      <input type="radio" value={id} name="tabs"></input>
-      <label htmlFor={id}> TAB {id}</label>
+      <input type="radio" value={title} name="tabs"></input>
+      <label htmlFor={title}> TAB {title}</label>
     </li>
   );
 };
 
 Tab.propTypes = {
-  id: PropTypes.number.isRequired
+  title: PropTypes.string.isRequired
 };
 
 export default Tab;

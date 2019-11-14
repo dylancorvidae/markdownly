@@ -1,5 +1,13 @@
 // export const getUpdateMarkdown = state => state.documentReducer.updated;
+export const getActiveTab = state => {
+  return state.documentReducer.active;
+};
+
 export const getMarkdown = state => {
-  const id = state.documentReducer.id;
-  return state.documentReducer.markdowns[id].markdown;
-}
+  const active = getActiveTab(state);
+  return state.documentReducer.markdowns[active];
+};
+
+export const getTitles = state => {
+  return Object.keys(state.documentReducer.markdowns);
+};
