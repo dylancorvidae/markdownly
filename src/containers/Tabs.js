@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TabDeck from '../components/tab/TabDeck';
 import { connect } from 'react-redux';
-import { getTitles, deleteTab } from '../selectors/documentSelectors';
-import { addTab } from '../actions/documentActions';
+import { getTitles } from '../selectors/documentSelectors';
+import { addTab, deleteTab } from '../actions/documentActions';
 
 
 
@@ -24,8 +24,8 @@ const mapDispatchToProps = dispatch => ({
   handleClick(tabNumber) {
     dispatch(addTab(tabNumber));
   },
-  handleDelete({ target }) {
-    dispatch(deleteTab(target.value));
+  handleDelete(title) {
+    dispatch(deleteTab(title));
   }
 });
 

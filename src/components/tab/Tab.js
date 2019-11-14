@@ -6,7 +6,7 @@ const Tab = ({ title, handleDelete }) => {
     <li>
       <input type="radio" value={title} name="tabs"></input>
       <label htmlFor={title}> TAB {title}</label>
-      <button value={title} onClick={handleDelete}>X</button>
+      <button value={title} onClick={() => handleDelete(title)}>X</button>
     </li>
   );
 };
