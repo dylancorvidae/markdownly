@@ -1,0 +1,1 @@
+export const getTab = state => state.tabReducer.id;
