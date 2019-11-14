@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TabDeck from '../components/list/TabDeck';
-// import { connect } from 'react-redux';
-// import { getTab } from '../selectors/tabSelector';
+import TabDeck from '../components/tab/TabDeck';
+import { connect } from 'react-redux';
+import { getTab } from '../selectors/tabSelector';
 // import { addTab } from '../actions/tabActions';
 
 
 const Tabs = () => {
   return (
-    <TabDeck tabs={[
-      { id: 1 },
-      { id: 2 }
-    ]} />
+    <>
+      <TabDeck tabs={[{ id: 0 }]} />
+      <button>ADD</button>
+    </>
   );
 };
 
@@ -20,7 +20,7 @@ const Tabs = () => {
 // });
 
 // const mapDispatchToProps = dispatch => ({
-  
+
 // });
 
 // Tabs.propTypes = {
@@ -29,7 +29,7 @@ const Tabs = () => {
 
 // export default connect(
 //   mapStateToProps,
-//   mapDispatchToProps
+//   // mapDispatchToProps
 // )(Tabs);
 
 export default Tabs;
