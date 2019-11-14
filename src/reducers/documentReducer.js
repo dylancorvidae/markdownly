@@ -3,7 +3,7 @@ import { UPDATE_MARKDOWN, ADD_TAB } from '../actions/documentActions';
 const initialState = {
   active: 'default',
   markdowns: {
-    default: '# hi there',
+    default: '# hi ',
   }
 };
 
