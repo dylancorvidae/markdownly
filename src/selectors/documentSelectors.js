@@ -11,10 +11,24 @@ export const getTitles = state => {
   return Object.keys(state.documentReducer.markdowns);
 };
 
-export const deleteTab = state => {
+export const getTabs = state => {
   return state.documentReducer.markdowns;
 };
 
 export const getSearchTerm = state => {
-  return state.documentReducer.getSearchTerm;
+  return state.documentReducer.searchTerm;
+};
+
+
+export const getMatchByTitle = state => {
+  return Object.entries(getTabs(state))
+    .filter(([title]) => title.includes(state.documentReducer.searchTerm))
+    .reduce((acc, [title, markdown]) => {
+      acc[title] = markdown;
+      return acc;
+    }, {});
+};
+
+export const getMatchTitlesByTitle = state => {
+  return Object.keys(getMatchByTitle(state));
 };

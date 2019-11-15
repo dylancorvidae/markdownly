@@ -1,4 +1,4 @@
-import { UPDATE_MARKDOWN, ADD_TAB, DELETE_TAB, ADD_SEARCH } from '../actions/documentActions';
+import { UPDATE_MARKDOWN, ADD_TAB, DELETE_TAB, ADD_SEARCH, GET_MATCH_TITLE } from '../actions/documentActions';
 
 const initialState = {
   active: 'default',
@@ -19,8 +19,6 @@ export default function reducer(state = initialState, action) {
       return { ...state };
     case ADD_SEARCH:
       return { ...state, searchTerm: action.payload };
-    case GET_MATCH_TITLE:
-      return { ...state, markdowns: {} };
     default:
       return state;
   }

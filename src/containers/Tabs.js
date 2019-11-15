@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import TabDeck from '../components/tab/TabDeck';
 import { connect } from 'react-redux';
-import { getTitles, getSearchTerm } from '../selectors/documentSelectors';
+import { getSearchTerm, getMatchTitlesByTitle } from '../selectors/documentSelectors';
 import { addTab, deleteTab, addSearch, getMatchTitle } from '../actions/documentActions';
 import Filter from '../components/filter/Filter';
 
@@ -11,13 +11,13 @@ const Tabs = ({ handleClick, titles, handleDelete, handleChange, handleSubmit, s
     <>
       <TabDeck handleDelete={handleDelete} titles={titles} />
       <button onClick={() => handleClick(titles.length)}>ADD</button>
-      <Filter handleSubmit={() => handleSubmit(searchTerm)} handleChange={handleChange} />
+      <Filter handleSubmit={handleSubmit} handleChange={handleChange} searchTerm={searchTerm} />
     </>
   );
 };
 
 const mapStateToProps = state => ({
-  titles: getTitles(state),
+  titles: getMatchTitlesByTitle(state),
   searchTerm: getSearchTerm(state)
 });
 
