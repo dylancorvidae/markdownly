@@ -1,4 +1,4 @@
-import { UPDATE_MARKDOWN, ADD_TAB, DELETE_TAB, ADD_SEARCH, GET_MATCH_TITLE } from '../actions/documentActions';
+import { UPDATE_MARKDOWN, ADD_TAB, DELETE_TAB, ADD_SEARCH } from '../actions/documentActions';
 
 const initialState = {
   active: 'default',
