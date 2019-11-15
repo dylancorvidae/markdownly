@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Filter.css';
 
 const Filter = ({ handleSumbit, handleChange }) => {
   return (
-    <form onSubmit={handleSumbit}>
+    <form className={styles.Filter} onSubmit={handleSumbit}>
       <input onChange={handleChange}></input>
       <button onClick={handleSumbit}>Search</button>
     </form>
