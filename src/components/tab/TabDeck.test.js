@@ -2,8 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import TabDeck from './TabDeck';
 
-describe('App component', () => {
-  it('renders App', () => {
+describe('TabDeck component', () => {
+  it('renders TabDeck', () => {
     const wrapper = shallow(<TabDeck titles={[]} handleDelete={() => {}} />);
     expect(wrapper).toMatchSnapshot();
   });
