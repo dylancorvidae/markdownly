@@ -11,16 +11,20 @@ export default function Tabs() {
   const titles = useSelector(state => getTitles(state));
   const searchTerm = useSelector(state => getSearchTerm(state));
   const dispatch = useDispatch();
-  const handleChange = ({ target }) => dispatch(addSearch(target.value));
+  const handleChange = ({ target }) => { 
+    event.preventDefault();
+    dispatch(addSearch(target.value)); };
   const handleClick = tabNumber => dispatch(addTab(tabNumber));
-  const handleDelete = deleteTab => dispatch(addTab(deleteTab));
-  const handleSubmit = getMatchTitle => dispatch(addTab(getMatchTitle));
+  const handleDelete = title => dispatch(addTab(title));
+  const handleSubmit = searchTerm => {  
+    event.preventDefault();
+    dispatch(addTab(searchTerm)); };
 
   return (
     <>
       <TabDeck handleDelete={handleDelete} titles={titles} />
       <button onClick={() => handleClick(titles.length)}>ADD</button>
-      <Filter handleSubmit={() => handleSubmit(searchTerm)} handleChange={handleChange} />
+      <Filter handleSubmit={handleSubmit} handleChange={handleChange} searchTerm={searchTerm} />
     </>
   );
 }
