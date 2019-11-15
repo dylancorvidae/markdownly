@@ -19,8 +19,6 @@ export default function reducer(state = initialState, action) {
       return { ...state };
     case ADD_SEARCH:
       return { ...state, searchTerm: action.payload };
-    // case GET_MATCH_TITLE:
-    //   return { ...state, markdowns: {} };
     default:
       return state;
   }

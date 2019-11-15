@@ -1,9 +1,7 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import TabDeck from '../components/tab/TabDeck';
-import { getTitles, getSearchTerm } from '../selectors/documentSelectors';
-// eslint-disable-next-line no-unused-vars
+import { getSearchTerm, getMatchTitlesByTitle } from '../selectors/documentSelectors';
 import { addTab, deleteTab, addSearch, getMatchTitle } from '../actions/documentActions';
 import Filter from '../components/filter/Filter';
 
