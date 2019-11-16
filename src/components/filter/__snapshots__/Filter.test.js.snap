@@ -2,6 +2,7 @@
 
 exports[`Filter component renders Filter 1`] = `
 <form
+  className="Filter"
   onSubmit={[Function]}
 >
   <input
