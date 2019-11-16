@@ -3,7 +3,7 @@
 exports[`App component renders App 1`] = `
 <Fragment>
   <Header />
-  <Connect(Document) />
-  <Connect(Tabs) />
+  <Document />
+  <Tabs />
 </Fragment>
 `;
