@@ -1,3 +1,4 @@
 .Document {
-  display: flex
+  display: flex;
+  border: solid 1px black;
 }

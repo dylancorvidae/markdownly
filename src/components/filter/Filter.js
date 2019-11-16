@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Filter.css';
 
 const Filter = ({ handleSubmit, handleChange, searchTerm }) => {
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.Filter} onSubmit={handleSubmit}>
       <input onChange={handleChange}></input>
       <button onClick={() => handleSubmit(searchTerm)}>Search</button>
     </form>
