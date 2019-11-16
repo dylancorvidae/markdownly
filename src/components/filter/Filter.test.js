@@ -2,8 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import Filter from './Filter';
 
-describe('App component', () => {
-  it('renders App', () => {
+describe('Filter component', () => {
+  it('renders Filter', () => {
     const wrapper = shallow(<Filter handleSubmit={() => {}} handleChange={() => {}} searchTerm={'hello'} />);
     expect(wrapper).toMatchSnapshot();
   });
