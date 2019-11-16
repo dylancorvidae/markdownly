@@ -1,40 +1,43 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Preview from '../components/markdown/Preview';
 import Editor from '../components/markdown/Editor';
 import styles from './Document.css';
-import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { getMarkdown } from '../selectors/documentSelectors';
 import { updateMarkdown } from '../actions/documentActions';
 
-const Document = ({ updateMarkdown, markdown }) => {
+export default function Document() {
+  const markdown = useSelector(state => getMarkdown(state));
+  const dispatch = useDispatch();
+  const handleUpdateMarkdown = ({ target }) => dispatch(updateMarkdown(target.value));
 
   return (
     <>
       <div className={styles.Document}>
-        <Editor markdown={markdown} updateMarkdown={updateMarkdown} />
+        <Editor markdown={markdown} updateMarkdown={handleUpdateMarkdown} />
         <Preview markdown={markdown} />
       </div>
     </>
   );
-};
+}
 
-const mapStateToProps = state => ({
-  markdown: getMarkdown(state)
-});
+// const mapStateToProps = state => ({
+//   markdown: getMarkdown(state)
+// });
 
-const mapDispatchToProps = dispatch => ({
-  updateMarkdown({ target }) {
-    dispatch(updateMarkdown(target.value));
-  }
-});
+// const mapDispatchToProps = dispatch => ({
+//   updateMarkdown({ target }) {
+//     dispatch(updateMarkdown(target.value));
+//   }
+// });
 
-Document.propTypes = {
-  markdown: PropTypes.string.isRequired,
-  updateMarkdown: PropTypes.func
-};
+// Document.propTypes = {
+//   markdown: PropTypes.string.isRequired,
+//   updateMarkdown: PropTypes.func
+// };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Document);
+// export default connect(
+//   mapStateToProps,
+//   mapDispatchToProps
+// )(Document);

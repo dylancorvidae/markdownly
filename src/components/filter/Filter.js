@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './Filter.css';
 
 const Filter = ({ handleSubmit, handleChange, searchTerm }) => {
   return (

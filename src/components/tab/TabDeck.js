@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Tab from './Tab';
+import styles from './TabDeck.css';
 
 const TabDeck = ({ titles, handleDelete }) => {
   const tabItems = titles.map(title => {
@@ -10,7 +11,7 @@ const TabDeck = ({ titles, handleDelete }) => {
   });
 
   return (
-    <ul>
+    <ul className={styles.TabDeck}>
       {tabItems}
     </ul>
   );
