@@ -30,7 +30,7 @@ exports[`Document component renders Document 1`] = `
     }
   }
 >
-  <Connect(Document) />
+  <Document />
   );
 </ContextProvider>
 `;

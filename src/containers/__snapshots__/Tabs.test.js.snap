@@ -30,7 +30,7 @@ exports[`Tabs component renders Tabs 1`] = `
     }
   }
 >
-  <Connect(Tabs) />
+  <Tabs />
   );
 </ContextProvider>
 `;
